@@ -16,7 +16,7 @@ class NetworkingFacade : NSObject {
 
     // POST
     func uploadBarcodes(barcodeId: String, barcodes: [String], completionBlock: BooleanClosure?) {
-        Alamofire.request(.POST, URLStringWithExtension("barcode"), parameters: [ "barcodeId" : barcodeId, "barcodes" : barcodes])
+        Alamofire.request(.POST, URLStringWithExtension("barcode"), parameters: [ "barcodeId" : barcodeId, "barcodes" : barcodes], encoding: .JSON)
             .responseJSON { response in
                 if let json = response.result.value {
                     print(json);

@@ -17,6 +17,15 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier! == "checkoutSegue" {
+            let destVC = segue.destinationViewController as! CheckoutVC
+            
+            //TODO: Set the barcode list
+            destVC.barcodeList = ["test", "test2", "test3"];
+        }
+    }
 }
 
 extension ViewController : UITableViewDelegate {
