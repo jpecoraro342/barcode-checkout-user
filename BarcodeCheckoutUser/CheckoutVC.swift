@@ -18,6 +18,7 @@ class CheckoutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let barcodeString = randomStringWithLength(16)
         generateQRCode(barcodeString)
         NetworkingFacade().uploadBarcodes(barcodeString, barcodes: barcodeList) { (success) -> Void in
@@ -27,6 +28,12 @@ class CheckoutVC: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func dismissSelf() {
+        dismissViewControllerAnimated(true, completion: {
+            
+        })
     }
     
     func generateQRCode(barcodeString: String) {
