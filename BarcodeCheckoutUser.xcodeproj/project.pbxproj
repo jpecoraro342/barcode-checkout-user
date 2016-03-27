@@ -20,6 +20,7 @@
 		158CF8E01CA79C4C00432A83 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */; };
 		158CF8E11CA79C4C00432A83 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EBDFF5D1CA7A1590067B7CC /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDFF5C1CA7A1590067B7CC /* ItemTableViewCell.swift */; };
+		158CF8E51CA79D7000432A83 /* NetworkingFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158CF8E41CA79D7000432A83 /* NetworkingFacade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,7 @@
 		158CF8DC1CA79C4C00432A83 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		6EBDFF5C1CA7A1590067B7CC /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		158CF8E41CA79D7000432A83 /* NetworkingFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingFacade.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				158CF8DB1CA79C3200432A83 /* Frameworks */,
 				158CF8C51CA79A2600432A83 /* BarcodeScanner */,
+				158CF8E31CA79D2000432A83 /* Networking */,
 				154412161CA7990C0056700C /* AppDelegate.swift */,
 				154412181CA7990C0056700C /* ViewController.swift */,
 				6EBDFF5C1CA7A1590067B7CC /* ItemTableViewCell.swift */,
@@ -115,6 +118,14 @@
 				158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		158CF8E31CA79D2000432A83 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				158CF8E41CA79D7000432A83 /* NetworkingFacade.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				158CF8CB1CA79A3300432A83 /* BarcodeScannerViewController.swift in Sources */,
+				158CF8E51CA79D7000432A83 /* NetworkingFacade.swift in Sources */,
 				154412191CA7990C0056700C /* ViewController.swift in Sources */,
 				158CF8CA1CA79A3300432A83 /* BarcodeFinderView.swift in Sources */,
 				154412171CA7990C0056700C /* AppDelegate.swift in Sources */,
