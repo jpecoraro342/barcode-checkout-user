@@ -20,9 +20,20 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qJ-9y-6aC">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="063-xg-Wsm">
+                                        <rect key="frame" x="545" y="26" width="35" height="30"/>
+                                        <state key="normal" title="Scan"/>
+                                        <connections>
+                                            <segue destination="t2F-mn-QBQ" kind="presentation" id="5Dd-Pf-g8O"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.56470588239999997" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="4f7-ja-x9v"/>
+                                    <constraint firstAttribute="trailing" secondItem="063-xg-Wsm" secondAttribute="trailing" constant="20" id="gJT-cb-6Iw"/>
+                                    <constraint firstAttribute="bottom" secondItem="063-xg-Wsm" secondAttribute="bottom" constant="8" id="sxt-QR-jH7"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmK-ln-JCU">
@@ -101,6 +112,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="318" y="355"/>
+        </scene>
+        <!--Barcode Scanner View Controller-->
+        <scene sceneID="ggl-Hi-AS4">
+            <objects>
+                <viewController id="t2F-mn-QBQ" customClass="BarcodeScannerViewController" customModule="BarcodeCheckoutUser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VWb-jj-lF8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wy1-Za-DN6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C3I-Tm-aiq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oOH-st-a2Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1018" y="355"/>
         </scene>
     </scenes>
 </document>
