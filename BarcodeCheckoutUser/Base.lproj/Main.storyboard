@@ -23,7 +23,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="063-xg-Wsm">
                                         <rect key="frame" x="545" y="26" width="35" height="30"/>
-                                        <state key="normal" title="Scan"/>
+                                        <state key="normal" title="Scan">
+                                            <color key="titleColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="t2F-mn-QBQ" kind="presentation" id="5Dd-Pf-g8O"/>
                                         </connections>
@@ -86,6 +88,11 @@
                                                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="ElU-zE-V8J" secondAttribute="trailing" constant="20" id="rOl-T2-ceQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="barcodeLabel" destination="ElU-zE-V8J" id="c1a-tC-WcX"/>
+                                            <outlet property="nameLabel" destination="hs5-BP-mTV" id="x1Q-TV-vj0"/>
+                                            <outlet property="priceLabel" destination="kdV-b0-XtX" id="19J-51-R0V"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -108,6 +115,9 @@
                             <constraint firstItem="8qJ-9y-6aC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="sN2-cx-seC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="2WL-L8-W0b" id="2lQ-Rk-Zca"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

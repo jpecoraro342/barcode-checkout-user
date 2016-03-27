@@ -24,7 +24,7 @@ enum BarcodeType : String {
 
 public class Barcode: NSObject {
     var barcodeType : BarcodeType?
-    var barcodeValue : NSString?
+    var barcodeValue : String?
     
     init(metadataCode: AVMetadataMachineReadableCodeObject) {
         barcodeType = BarcodeType(rawValue: metadataCode.type!)!

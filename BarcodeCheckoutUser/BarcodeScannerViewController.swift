@@ -23,7 +23,9 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
     var topBar = UIView()
     var barcodeFinderWindow : BarcodeFinderView?
     
-    var alertView : UIAlertView?
+    var alertController : UIAlertController?
+
+    var controller: ViewController?
     
     //MARK:
     //MARK: View Lifecycle
@@ -111,6 +113,7 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         instructionLabel.font = UIFont.systemFontOfSize(13)
         
         topBar.addSubview(instructionLabel)
+        
         view.addSubview(topBar)
     }
     
@@ -121,7 +124,24 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         bottomBar.backgroundColor = UIColor(white: 0.15,
             alpha: 0.7)
         
+        let cancelButton = UIButton(frame: CGRectMake(0,0,CGRectGetWidth(UIScreen.mainScreen().bounds),60))
+        cancelButton.setTitle("Cancel", forState: .Normal)
+        cancelButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        cancelButton.addTarget(self,
+                               action: #selector(BarcodeScannerViewController.dismissSelf),
+                               forControlEvents: .TouchUpInside)
+        
+        bottomBar.addSubview(cancelButton)
+        
+        
         view.addSubview(bottomBar)
+    }
+    
+    func dismissSelf() {
+        stopRunning()
+        dismissViewControllerAnimated(true, completion: {
+            
+        })
     }
     
     func setupHighlightView() {
@@ -153,27 +173,19 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         for metadataObject : AnyObject in metadataObjects {
             var highlightViewRect = CGRectZero
             
-            var metadataObject = previewLayer!.transformedMetadataObjectForMetadataObject(metadataObject as! AVMetadataObject)
+            let metadataObject = previewLayer!.transformedMetadataObjectForMetadataObject(metadataObject as! AVMetadataObject)
             if metadataObject.isKindOfClass(AVMetadataMachineReadableCodeObject.self) {
-                var barcodeMetadata = metadataObject as! AVMetadataMachineReadableCodeObject
+                let barcodeMetadata = metadataObject as! AVMetadataMachineReadableCodeObject
                 highlightViewRect = barcodeMetadata.bounds
                 highlightView.frame = highlightViewRect
                 
-                var barcode = Barcode(metadataCode: barcodeMetadata)
+                let barcode = Barcode(metadataCode: barcodeMetadata)
                 if isValidBarcode(barcode) {
                     validBarcodeFound(barcode)
                 }
             }
         }
         
-    }
-    
-    //MARK:
-    //MARK: Alert Delegate
-    func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
-        self.alertView = nil
-        setupHighlightView()
-        startRunning()
     }
     
     //MARK:
@@ -185,14 +197,29 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
     }
     
     func validBarcodeFound(barcode: Barcode) {
-        if alertView != nil {
+        if alertController != nil {
             return;
         }
         
-        NSLog("Barcode: \(barcode)\n\n")
+        print("Barcode: \(barcode)\n\n")
+        alertController = UIAlertController(title: "Barcode Scanned", message: "Add this item to your cart?", preferredStyle: .Alert)
         
-        alertView = UIAlertView(title: "Barcode Found", message: barcode.description, delegate: self, cancelButtonTitle: "Ok")
-        alertView?.show()
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            
+        }
+        
+        alertController?.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "Add to Cart", style: .Default) { (action) in
+            self.controller?.addBarcode(barcode)
+            self.dismissSelf()
+        }
+        
+        alertController?.addAction(OKAction)
+        
+        self.presentViewController(alertController!, animated: true) {
+            
+        }
     }
     
     func bringAllSubviewsToFront() {
