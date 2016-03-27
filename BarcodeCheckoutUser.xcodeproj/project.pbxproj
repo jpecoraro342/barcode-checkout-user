@@ -20,6 +20,8 @@
 		158CF8E01CA79C4C00432A83 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */; };
 		158CF8E11CA79C4C00432A83 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		158CF8E51CA79D7000432A83 /* NetworkingFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158CF8E41CA79D7000432A83 /* NetworkingFacade.swift */; };
+		158CF8EA1CA7A43B00432A83 /* QRCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8E91CA7A43B00432A83 /* QRCode.framework */; };
+		158CF8EB1CA7A43B00432A83 /* QRCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8E91CA7A43B00432A83 /* QRCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				158CF8EB1CA7A43B00432A83 /* QRCode.framework in Embed Frameworks */,
 				158CF8E11CA79C4C00432A83 /* SwiftyJSON.framework in Embed Frameworks */,
 				158CF8DF1CA79C4C00432A83 /* Alamofire.framework in Embed Frameworks */,
 			);
@@ -51,6 +54,7 @@
 		158CF8DC1CA79C4C00432A83 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		158CF8E41CA79D7000432A83 /* NetworkingFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingFacade.swift; sourceTree = "<group>"; };
+		158CF8E91CA7A43B00432A83 /* QRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCode.framework; path = ../Carthage/Build/iOS/QRCode.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158CF8EA1CA7A43B00432A83 /* QRCode.framework in Frameworks */,
 				158CF8E01CA79C4C00432A83 /* SwiftyJSON.framework in Frameworks */,
 				158CF8DE1CA79C4C00432A83 /* Alamofire.framework in Frameworks */,
 			);
@@ -111,6 +116,7 @@
 		158CF8DB1CA79C3200432A83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				158CF8E91CA7A43B00432A83 /* QRCode.framework */,
 				158CF8DC1CA79C4C00432A83 /* Alamofire.framework */,
 				158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */,
 			);
