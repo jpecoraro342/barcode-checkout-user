@@ -15,7 +15,26 @@
 		158CF8C91CA79A3300432A83 /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158CF8C61CA79A3300432A83 /* Barcode.swift */; };
 		158CF8CA1CA79A3300432A83 /* BarcodeFinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158CF8C71CA79A3300432A83 /* BarcodeFinderView.swift */; };
 		158CF8CB1CA79A3300432A83 /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158CF8C81CA79A3300432A83 /* BarcodeScannerViewController.swift */; };
+		158CF8DE1CA79C4C00432A83 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8DC1CA79C4C00432A83 /* Alamofire.framework */; };
+		158CF8DF1CA79C4C00432A83 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8DC1CA79C4C00432A83 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		158CF8E01CA79C4C00432A83 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */; };
+		158CF8E11CA79C4C00432A83 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		158CF8E21CA79C4D00432A83 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				158CF8E11CA79C4C00432A83 /* SwiftyJSON.framework in Embed Frameworks */,
+				158CF8DF1CA79C4C00432A83 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		154412131CA7990C0056700C /* BarcodeCheckoutUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcodeCheckoutUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +47,8 @@
 		158CF8C61CA79A3300432A83 /* Barcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
 		158CF8C71CA79A3300432A83 /* BarcodeFinderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeFinderView.swift; sourceTree = "<group>"; };
 		158CF8C81CA79A3300432A83 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
+		158CF8DC1CA79C4C00432A83 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158CF8E01CA79C4C00432A83 /* SwiftyJSON.framework in Frameworks */,
+				158CF8DE1CA79C4C00432A83 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +83,7 @@
 		154412151CA7990C0056700C /* BarcodeCheckoutUser */ = {
 			isa = PBXGroup;
 			children = (
+				158CF8DB1CA79C3200432A83 /* Frameworks */,
 				158CF8C51CA79A2600432A83 /* BarcodeScanner */,
 				154412161CA7990C0056700C /* AppDelegate.swift */,
 				154412181CA7990C0056700C /* ViewController.swift */,
@@ -81,6 +105,15 @@
 			name = BarcodeScanner;
 			sourceTree = "<group>";
 		};
+		158CF8DB1CA79C3200432A83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				158CF8DC1CA79C4C00432A83 /* Alamofire.framework */,
+				158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,6 +124,7 @@
 				1544120F1CA7990C0056700C /* Sources */,
 				154412101CA7990C0056700C /* Frameworks */,
 				154412111CA7990C0056700C /* Resources */,
+				158CF8E21CA79C4D00432A83 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -267,6 +301,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BarcodeCheckoutUser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.josephpecoraro.BarcodeCheckoutUser;
@@ -278,6 +316,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BarcodeCheckoutUser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.josephpecoraro.BarcodeCheckoutUser;
