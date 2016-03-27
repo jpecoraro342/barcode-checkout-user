@@ -19,6 +19,7 @@
 		158CF8DF1CA79C4C00432A83 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8DC1CA79C4C00432A83 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		158CF8E01CA79C4C00432A83 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */; };
 		158CF8E11CA79C4C00432A83 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6EBDFF5D1CA7A1590067B7CC /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDFF5C1CA7A1590067B7CC /* ItemTableViewCell.swift */; };
 		158CF8E51CA79D7000432A83 /* NetworkingFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158CF8E41CA79D7000432A83 /* NetworkingFacade.swift */; };
 		158CF8EA1CA7A43B00432A83 /* QRCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8E91CA7A43B00432A83 /* QRCode.framework */; };
 		158CF8EB1CA7A43B00432A83 /* QRCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF8E91CA7A43B00432A83 /* QRCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -53,6 +54,7 @@
 		158CF8C81CA79A3300432A83 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
 		158CF8DC1CA79C4C00432A83 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		158CF8DD1CA79C4C00432A83 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		6EBDFF5C1CA7A1590067B7CC /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		158CF8E41CA79D7000432A83 /* NetworkingFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingFacade.swift; sourceTree = "<group>"; };
 		158CF8E91CA7A43B00432A83 /* QRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCode.framework; path = ../Carthage/Build/iOS/QRCode.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 				158CF8E31CA79D2000432A83 /* Networking */,
 				154412161CA7990C0056700C /* AppDelegate.swift */,
 				154412181CA7990C0056700C /* ViewController.swift */,
+				6EBDFF5C1CA7A1590067B7CC /* ItemTableViewCell.swift */,
 				1544121A1CA7990C0056700C /* Main.storyboard */,
 				1544121D1CA7990C0056700C /* Assets.xcassets */,
 				1544121F1CA7990C0056700C /* LaunchScreen.storyboard */,
@@ -208,6 +211,7 @@
 				154412191CA7990C0056700C /* ViewController.swift in Sources */,
 				158CF8CA1CA79A3300432A83 /* BarcodeFinderView.swift in Sources */,
 				154412171CA7990C0056700C /* AppDelegate.swift in Sources */,
+				6EBDFF5D1CA7A1590067B7CC /* ItemTableViewCell.swift in Sources */,
 				158CF8C91CA79A3300432A83 /* Barcode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
