@@ -35,6 +35,13 @@ class ViewController: UIViewController {
             let vc = segue.destinationViewController as! BarcodeScannerViewController
             vc.controller = self
         }
+
+		if segue.identifier! == "checkoutSegue" {
+            let destVC = segue.destinationViewController as! CheckoutVC
+            
+            //TODO: Set the barcode list
+            destVC.barcodeList = ["test", "test2", "test3"];
+        }
     }
 }
 
