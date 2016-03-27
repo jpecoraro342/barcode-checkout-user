@@ -34,9 +34,7 @@ class ViewController: UIViewController {
         if segue.destinationViewController is BarcodeScannerViewController {
             let vc = segue.destinationViewController as! BarcodeScannerViewController
             vc.controller = self
-        }
-
-		if segue.identifier! == "checkoutSegue" {
+        } else if segue.identifier! == "checkoutSegue" {
             let destVC = segue.destinationViewController as! CheckoutVC
             
             var barList = [String]()
